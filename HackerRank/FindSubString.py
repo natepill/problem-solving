@@ -8,14 +8,28 @@ the index(obj) function is resetting the index at an earlier occurence of a lett
 the sub_string to where the index is supposed to be at.
 """
 
+# def count_substring(word, sub_string):
+#     counter = 0
+#     for letter in word:
+#         index = word.index(letter)
+#         if sub_string in word[index:(index+len(sub_string))]:
+#             counter += 1
+#
+#     return counter
+
+
 def count_substring(word, sub_string):
+
     counter = 0
-    for letter in word:
-        index = word.index(letter)
-        if sub_string in word[index:(index+len(sub_string))]:
+    index = 0
+    for letter in range(len(word)):
+        if sub_string in word[index:index+len(sub_string)]:
             counter += 1
+        index += 1
 
     return counter
+
+
 
 
 
