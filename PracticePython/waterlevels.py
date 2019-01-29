@@ -22,9 +22,9 @@ def water_levels(array):
             sum += wall - array[index + 1]
 
 
-        print("iterator:", iterator + "at ", index)
+        print("iterator:", str(iterator) + "at ", str()index)
         print("wall:", wall, "at", index )
-        
+
 
 
         # print("index {}".format(index))

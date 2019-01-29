@@ -33,6 +33,7 @@ def count_substring(word, sub_string):
 
 
 
+
 if __name__ == "__main__":
     print(count_substring("ABCDCDC", "CDC"))
     # print(count_substring("abcdcdc", "cdc"))
