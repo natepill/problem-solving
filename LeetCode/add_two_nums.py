@@ -15,10 +15,15 @@ def addTwoNumbers(l1: ListNode, l2: ListNode) -> ListNode:
 
 
     while l1_curr is not None and l2_curr is not None:
+
+        # print("l1 curr: " + str(l1_curr.val))
+        # print("l2 curr: " + str(l2_curr.val))
+
         base_sum = l1_curr.val + l2_curr.val
 
         # Carry over is always going to add one if indicated by carry over flag
         node_sum = base_sum if carry_over == False else base_sum + 1
+        # print(node_sum)
 
         # Sum is larger than 9 implies carry over
         if node_sum > 9:
@@ -32,23 +37,24 @@ def addTwoNumbers(l1: ListNode, l2: ListNode) -> ListNode:
 
             else:
 
-                answer_node_curr.next = ListNode(base_sum%10)
+                answer_node_curr.next = ListNode(node_sum%10)
 
             # Carry over to be done next iteration
             carry_over = True
 
+        # Sum is less than 9 implies NO carry over
         else:
             if answer_node_curr is None:
-                answer_node_curr = ListNode(base_sum)
+                answer_node_curr = ListNode(node_sum)
                 answer_node_head = answer_node_curr
             else:
-                answer_node_curr.next = ListNode(base_sum)
+                answer_node_curr.next = ListNode(node_sum)
+                print(node_sum)
 
             # No carry over to be done next iteration
             carry_over = False
 
         # Traverse both LL
-
         # No more addition
         if l1_curr.next is None and l2_curr.next is None:
             break
@@ -70,6 +76,9 @@ def addTwoNumbers(l1: ListNode, l2: ListNode) -> ListNode:
             l1_curr = l1_curr.next
             l2_curr = l2_curr.next
 
+    return answer_node_head
+
+
 
 def print_ll(head_node):
 
@@ -89,12 +98,12 @@ if __name__ == "__main__":
     l1.next = l1a
     l1a.next = ListNode(6)
 
-    print(print_ll(l1))
 
-    # l2 = ListNode(5)
-    # l2a = ListNode(3)
-    # l2.next = l2a
-    # l2a.next = ListNode(7)
-    #
-    #
-    # addTwoNumbers(l1, l2)
+    l2 = ListNode(5)
+    l2a = ListNode(3)
+    l2.next = l2a
+    l2a.next = ListNode(7)
+
+
+    answer_node = addTwoNumbers(l1, l2)
+    print(print_ll(answer_node))
