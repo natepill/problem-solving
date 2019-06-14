@@ -2,6 +2,9 @@
 '''
     Instead of nested for loops, let's refactor to implement an index_counter and then
     reset the index_counter when we "see" a char that we've seen before
+
+    Also try to practice running through sample inputs for the working solution
+    to increase speed.
 '''
 
 # NOTE: I'm keeping the non working solution as a reminder of when to use nested
@@ -49,7 +52,7 @@ def longest_substr(string):
     # Stop iterating when we've seen all possibile substrings in the string
     while index_curr < last_index:
         curr_char = string[index_curr]
-        print("current char: ", curr_char)
+        # print("current char: ", curr_char)
         # print(curr_char)
 
         # End of current substring
@@ -57,11 +60,13 @@ def longest_substr(string):
             seen = set()
             substr_index += 1
             index_curr = substr_index
+            longest = max(curr_counter, longest)
             curr_counter = 0
+
 
         # Continue substring
         else:
-            print("else")
+            # print("else")
             index_curr += 1
             curr_counter += 1
             seen.add(curr_char)
@@ -74,6 +79,6 @@ def longest_substr(string):
 if __name__ == "__main__":
 
     # Test inputs
-    Input = "dvdf" # expect 3
+    Input = "abcabcbb" # expect 3
 
     print(longest_substr(Input))
