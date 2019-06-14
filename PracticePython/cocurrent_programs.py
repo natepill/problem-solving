@@ -8,17 +8,23 @@ def max_programs_being_run(timeframes):
     """Return the maximum amount of programs that were running at one time."""
 
     current_time_frame = None
-    num_of_programs_running = 0
-
+    max_number_programs_running = 0
+    timeframe_counter = {}
 
     for timeframe in timeframes:
 
-        if timeframe[0] >= current_time_frame:
-            # end of current
+        for num in range(timeframe[0], timeframe[1]):
+            if timeframe_counter[num] is not None:
+                timeframe_counter[num] += 1
 
+            else:
+                timeframe_counter[num] = 1
 
+    return timeframe_counter
 
 input = [(1,3), (1,4), (2,6), (4,7), (5,8)]
+
+print(max_programs_being_run(input))
 # Answer: 3
 
 

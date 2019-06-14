@@ -3,7 +3,7 @@
 def sum_of_integers(arr):
     return ((arr[0] + arr[-1]) / 2)*len(arr)
 
-arr = [1,2,3]
+arr = [100,200,300]
 print(sum_of_integers(arr))
 
 
