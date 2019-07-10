@@ -75,7 +75,6 @@ def removeNthFromEnd(head, n):
         # if stopper node is None
             # remove current node and reassign pointers
 
-
     if head.next is None:
         return None
 
