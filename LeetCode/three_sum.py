@@ -13,8 +13,8 @@ def threeSum(nums):
             if index2 == index:
                 continue
 
-            if num2 - zero_target_sum in complement_pair:
-                result.append([zero_target_sum, num2, num2 - zero_target_sum])
+            if num2 + zero_target_sum in complement_pair:
+                result.append([num, num2, num2 + zero_target_sum])
                 # complement_pair[zero_target_sum]
 
             complement_pair.add(num2)

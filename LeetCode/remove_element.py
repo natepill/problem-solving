@@ -28,7 +28,6 @@ def removeElement(nums, val):
 
         index += 1
 
-
     return nums
 if __name__ == "__main__":
     nums = [0,1,2,2,3,0,4,2]
