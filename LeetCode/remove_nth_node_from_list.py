@@ -16,55 +16,55 @@ class ListNode:
         self.next = None
 
 
-# def removeNthFromEnd(head, n):
-#     # init index counter
-#     # Traverse LL
-#         # Store node values as values to index key value pairs: index:value
-#
-#     # init target_index = index_counter (which is now at end of LL) - n
-#     # reset index counter to 0
-#
-#     # Traverse LL again
-#         # Stop when index_counter = target_index
-#         # remove node at index and connect prev node to next node
-#
-#     if head.next is None:
-#         return None
-#
-#     index = 0
-#     curr_node = head
-#     prev_node = head
-#     node_indexes = []
-#
-#     while curr_node is not None:
-#         node_indexes.append(index)
-#         curr_node = curr_node.next
-#         index += 1
-#
-#     index = 0
-#     target_index = node_indexes[n*-1]
-#     curr_node = head
-#     print("TARGET INDEX:", target_index)
-#     while curr_node is not None:
-#         print("target_index:", str(target_index) + " current_index:", str(index))
-#         # print("index:", index)
-#         if index == target_index:
-#
-#             if prev_node is curr_node:
-#                 print("asdasdas")
-#                 head = curr_node.next
-#                 print("VL:",head.val)
-#                 break
-#
-#             prev_node.next = curr_node.next
-#             break
-#
-#         prev_node = curr_node
-#         curr_node = curr_node.next
-#
-#         index += 1
-#
-#     return head
+def removeNthFromEnd(head, n):
+    # init index counter
+    # Traverse LL
+        # Store node values as values to index key value pairs: index:value
+
+    # init target_index = index_counter (which is now at end of LL) - n
+    # reset index counter to 0
+
+    # Traverse LL again
+        # Stop when index_counter = target_index
+        # remove node at index and connect prev node to next node
+
+    if head.next is None:
+        return None
+
+    index = 0
+    curr_node = head
+    prev_node = head
+    node_indexes = []
+
+    while curr_node is not None:
+        node_indexes.append(index)
+        curr_node = curr_node.next
+        index += 1
+
+    index = 0
+    target_index = node_indexes[n*-1]
+    curr_node = head
+    print("TARGET INDEX:", target_index)
+    while curr_node is not None:
+        print("target_index:", str(target_index) + " current_index:", str(index))
+        # print("index:", index)
+        if index == target_index:
+
+            if prev_node is curr_node:
+                print("asdasdas")
+                head = curr_node.next
+                print("VL:",head.val)
+                break
+
+            prev_node.next = curr_node.next
+            break
+
+        prev_node = curr_node
+        curr_node = curr_node.next
+
+        index += 1
+
+    return head
 
 ''' V2 solution, trying to get optimized solution in one pass '''
 
