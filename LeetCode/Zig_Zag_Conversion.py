@@ -5,8 +5,8 @@ Write the code that will take a string and make this conversion given a number o
 
 def convert(self, s: str, numRows: int) -> str:
 
-    row_index = 0
-    row
+    # row_index = 0
+    # row
 
 
 

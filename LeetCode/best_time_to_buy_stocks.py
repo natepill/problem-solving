@@ -11,7 +11,29 @@ Note that you cannot sell a stock before you buy one.
 
 def maxProfit(prices):
 
+    potential_profit = 0
+    highest = prices[0]
+    lowest = prices[0]
 
+    for price in prices:
+        if price > highest:
+            highest = price
 
-if __nam__ == "__main__":
-    print(maxProfit())
+        if price < lowest:
+            lowest = price
+            highest = price
+            continue
+
+        if highest-lowest > potential_profit:
+            potential_profit = highest-lowest
+
+    return potential_profit
+    # return max(potential_profits)
+
+if __name__ == "__main__":
+
+    # Input: [7,1,5,3,6,4]
+    # Output: 5
+
+    input = [7,1,5,3,6,4]
+    print(maxProfit(input))
