@@ -19,7 +19,7 @@
 #
 #     print(stack)
 
-    return counter+len(stack)
+    # return counter+len(stack)
 
 
 
@@ -27,10 +27,8 @@ sampleInput = '((('
 # print(minAddToMakeValid(sampleInput))
 
 
-# for char in sampleInput:
-#     print('(')
 
-def test(S):
+def minAddToMakeValid(S):
     stack = []
     counter = 0
     for char in S:
@@ -48,4 +46,4 @@ def test(S):
 
     return counter + len(stack)
 
-print(test(sampleInput))
+print(minAddToMakeValid(sampleInput))
