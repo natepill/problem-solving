@@ -20,7 +20,7 @@ class Solution:
 #             curr_node = post_node
 #             next_node = curr_node.next
 
-# My recursive refactor
+    # My recursive refactor
 
         if not head or not head.next:
             return head
@@ -34,8 +34,8 @@ class Solution:
 
 # Copied Soltution
 
-        # temp=head
-        # temp2=head.next
-        # temp.next=self.swapPairs(temp2.next)
-        # temp2.next=temp
-        # return temp2
+        temp=head
+        temp2=head.next
+        temp.next=self.swapPairs(temp2.next)
+        temp2.next=temp
+        return temp2
