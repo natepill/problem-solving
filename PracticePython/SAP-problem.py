@@ -1,3 +1,8 @@
+
+
+
+
+
 '''
 Given a matrix, of set length (3 elements an array) determine if there is a path between 2 cells. Each element in an array is a cell
 
@@ -40,7 +45,7 @@ class FindPath(object):
             # Maybe should google if its possible to determine indexes of elements w/o enumeration over an entire list
         for index, cell in enumerate(list_of_cells):
 
-            
+
             # if cell == 1:
             #     self.starting_point = (index, cell) # Will be useful if we need to find a path from one list_of_cells to another list_of_cells
             #
