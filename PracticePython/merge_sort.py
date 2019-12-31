@@ -28,42 +28,74 @@ def merge_sort(arr):
 
 
 
+# def merge(arr1, arr2):
+#
+#     print("arr1:", arr1)
+#     print("arr2:", arr2)
+#     # check if lists are empty
+#     if not arr1 and not arr2:
+#         return []
+#
+#     sorted_arr = []
+#     sm_index = 0
+#     lg_index = 0
+#     # print("arr1:", arr1)
+#     # print("arr2:", arr2)
+#
+#     sm_arr, lg_arr = (arr1, arr2) if len(arr1) < len(arr2) else (arr2, arr1)
+#
+#     print("sm arr:", sm_arr)
+#     print("lg arr:", lg_arr)
+#
+#     while sm_index < len(sm_arr)-1:
+#         if sm_arr[sm_index] <= lg_arr[lg_index]:
+#             sorted_arr.append(sm_arr[sm_index])
+#             sm_index += 1
+#
+#         else:
+#             sorted_arr.append(lg_arr[lg_index])
+#             lg_index += 1
+#
+#
+#     # sorted_arr.extend(sm_arr[sm_index:])
+#     # sorted_arr.extend(lg_arr[lg_index:])
+#     while lg_index < len(lg_arr)-1:
+#         sorted_arr.append(lg_arr[lg_index])
+#
+#     print("sorted_arr:", sorted_arr)
+#     return sorted_arr
+
+
 def merge(arr1, arr2):
 
-    print("arr1:", arr1)
-    print("arr2:", arr2)
     # check if lists are empty
     if not arr1 and not arr2:
         return []
 
-    sorted_arr = []
-    sm_index = 0
-    lg_index = 0
-    # print("arr1:", arr1)
-    # print("arr2:", arr2)
+    index1, index2 = 0,0
+    merged_list = []
 
-    sm_arr, lg_arr = (arr1, arr2) if len(arr1) < len(arr2) else (arr2, arr1)
-
-    print("sm arr:", sm_arr)
-    print("lg arr:", lg_arr)
-
-    while sm_index < len(sm_arr)-1:
-        if sm_arr[sm_index] <= lg_arr[lg_index]:
-            sorted_arr.append(sm_arr[sm_index])
-            sm_index += 1
-
+    while index1<len(arr1) and index2<len(arr2):
+        if arr1[index1] <= arr2[index2]:
+            merged_list.append(arr1[index1])
+            index1 += 1
         else:
-            sorted_arr.append(lg_arr[lg_index])
-            lg_index += 1
+            merged_list.append(arr1[index2])
+            index2 += 1
+
+    if index1 > len(arr1)-1:
+        while index1 < len(arr1):
+            merged_list.append(arr1[index1])
+            index1+=1
+
+    elif index2 > len(arr2)-1:
+        while index2 < len(arr2):
+            merged_list.append(arr2[index2])
+            index2+=1
 
 
-    # sorted_arr.extend(sm_arr[sm_index:])
-    # sorted_arr.extend(lg_arr[lg_index:])
-    while lg_index < len(lg_arr)-1:
-        sorted_arr.append(lg_arr[lg_index])
+    return merged_list
 
-    print("sorted_arr:", sorted_arr)
-    return sorted_arr
 
 
 #
