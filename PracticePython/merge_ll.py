@@ -4,25 +4,55 @@ class ListNode:
         self.val = x
         self.next = None
 
+class Solution:
+    def mergeTwoLists(self, l1: ListNode, l2: ListNode) -> ListNode:
 
-def mergeTwoLists(l1: ListNode, l2: ListNode) -> ListNode:
+        head_of_ll = None
 
-    head_of_ll = ListNode(l1.val) if l1.val < l2.val else ListNode(l2.val)
-    new_node = head_of_ll
-    # curr_l1 = l1
-    # curr_l2 = l2
+        if l1 is None:
+            return l2
+        if l2 is None:
+            return l1
 
-    while l1 != None or l2 is not None:
-
-        if l1.val <= l2.val:
-            new_node.next = ListNode(l1.val)
+        if l1.val < l2.val:
+            head_of_ll = ListNode(l1.val)
             l1 = l1.next
         else:
-            new_node.next = ListNode(l2.val)
+            head_of_ll = ListNode(l2.val)
             l2 = l2.next
 
+        new_node = head_of_ll
+        # curr_l1 = l1
+        # curr_l2 = l2
 
-    return head_of_ll
+        while l1 is not None and l2 is not None:
+
+            if l1.val <= l2.val:
+                new_node.next = ListNode(l1.val)
+                l1 = l1.next
+            else:
+                new_node.next = ListNode(l2.val)
+                l2 = l2.next
+
+            new_node = new_node.next
+
+        if l1 is not None:
+            while l1 is not None:
+                new_node.next = ListNode(l1.val)
+                l1 = l1.next
+                new_node = new_node.next
+
+        if l2 is not None:
+            while l2 is not None:
+                new_node.next = ListNode(l2.val)
+                l2 = l2.next
+                new_node = new_node.next
+
+
+        return head_of_ll
+
+
+    
 
 
 if __name__ == "__main__":
