@@ -1,8 +1,6 @@
 
 
 
-
-
 '''
 Given a matrix, of set length (3 elements an array) determine if there is a path between 2 cells. Each element in an array is a cell
 
