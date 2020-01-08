@@ -1,3 +1,25 @@
+"""
+
+    What I learned:
+
+        This was a good review of Linked list problems over all. One thing that I learned is
+        to wary of multi-conditional loops. Have to understand the state that I'm leaving the
+        values in if they're changing in the loop and are a part of the conditional. I got slightly
+        stuck when I wasn't understanding why a value was None, but the code above it ran fine. I hadn't
+        understood that the value had become None after doing some iteration. 
+
+        I would have been able to quicker identify the issue if I had a small test case that I
+        ran EVERY line through.
+
+    Biggest Takeaway: To debug create a Minimal Viable Test Case (MVTC) that can be quickly executed
+    to identify the breaking point in the code.
+
+"""
+
+
+
+
+
 # Definition for singly-linked list.
 class ListNode:
     def __init__(self, x):
@@ -52,7 +74,7 @@ class Solution:
         return head_of_ll
 
 
-    
+
 
 
 if __name__ == "__main__":
