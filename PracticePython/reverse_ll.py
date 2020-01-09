@@ -1,3 +1,12 @@
+"""
+
+    Be quicker to MVTC to debug.
+
+    Review the recursive solution
+
+"""
+
+
 # Definition for singly-linked list.
 class ListNode:
     def __init__(self, x):
@@ -14,7 +23,7 @@ def reverseList(head: ListNode) -> ListNode:
     curr_node = head
     next_node = head.next
 
-    while curr_node is not None:
+    while next_node is not None:
         # point curr_node towards prev_node
         curr_node.next = prev_node
         # set prev_node to curr_node
@@ -25,6 +34,37 @@ def reverseList(head: ListNode) -> ListNode:
         next_node = curr_node.next
 
 
-    return prev_node
+    curr_node.next = prev_node
 
-    # return prev_node
+    return curr_node
+
+
+
+
+
+
+
+
+class Solution:
+
+    def helper(self, prev, cur):
+
+        if cur:
+
+            # locate next hopping node
+            next_hop = cur.next
+
+            # reverse direction
+            cur.next = prev
+
+            return self.helper( cur, next_hop)
+
+        else:
+
+            # new head of reverse linked list
+            return prev
+
+
+    def reverseList(self, head: ListNode) -> ListNode:
+
+        return self.helper( None, head)
