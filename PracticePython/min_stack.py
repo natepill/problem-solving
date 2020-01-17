@@ -1,4 +1,8 @@
 
+"""
+    Should refactor solution so that self.min is a Linked List of sorted mins so that if a min
+    is deleted from the stack, then we can just adjust self.min accordingly.
+"""
 
 class MinStack:
 
