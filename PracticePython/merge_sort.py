@@ -75,7 +75,7 @@ def merge(arr1, arr2):
     index1, index2 = 0,0
     merged_list = []
 
-    while index1<len(arr1) and index2<len(arr2):
+    while and index2<len(arr2):
         if arr1[index1] <= arr2[index2]:
             merged_list.append(arr1[index1])
             index1 += 1
