@@ -25,11 +25,16 @@ def intersect(nums1, nums2):
 
     for i,val in enumerate(sm_arr):
         # print(i)
-        if val in hist:
-            for _ in range(0,hist[val]-1):
+        try:
+            if val in hist:
                 intersect.append(val)
+                hist[val] -= 1
 
-            del hist[val]
+            if hist[val] == 0:
+                del hist[val]
+
+        except:
+            continue
 
     return intersect
 
