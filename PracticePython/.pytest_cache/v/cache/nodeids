@@ -1,0 +1,6 @@
+[
+  "OOP/calc_test.py::test_add",
+  "OOP/calc_test.py::test_sub",
+  "OOP/calc_test.py::test_mul",
+  "OOP/calc_test.py::test_div"
+]
