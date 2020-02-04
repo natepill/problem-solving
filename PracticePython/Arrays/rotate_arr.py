@@ -6,10 +6,9 @@ class Solution:
 
 #         Steps to Classical Rotation
 #         reverse the first n - k elements
-
 #         reverse the rest of them
-
 #         reverse the entire array
+
         if len(nums) == 1:
             return nums
 
