@@ -390,10 +390,6 @@ class BinarySearchTree(object):
 
 
 
-
-
-
-
         # Create queue to store nodes not yet traversed in level-order
         queue = LinkedQueue()
         # Enqueue given starting node
