@@ -28,3 +28,22 @@ class Solution:
         node_height = left_height if left_height > right_height else right_height
 
         return node_height + 1
+
+
+
+"""
+    More elegant recursive solution
+"""
+
+
+class Solution:
+    def maxDepth(self, root: TreeNode) -> int:
+
+
+        if root is None:
+            return 0
+
+        left = self.maxDepth(root.left) + 1
+        right = self.maxDepth(root.right) + 1
+
+        return max(left, right)
