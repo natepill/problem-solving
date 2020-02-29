@@ -15,7 +15,7 @@ class Solution:
                 curr_sum = val + sorted_nums[left] + sorted_nums[right]
 
                 if curr_sum == 0:
-                    results.append([val, sorted_nums[left],sorted_nums[right]])
+                    results.append(sorted([val, sorted_nums[left],sorted_nums[right]]))
                     break
 
                 elif curr_sum < 0:
@@ -26,4 +26,3 @@ class Solution:
 
 
         return results
-    
